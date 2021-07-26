@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+    <style type="text/css" media="all">
+      body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(white 50%,#007ffc 50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div{
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 60px;
+        letter-spacing: 5px;
+        color: white;
+        position: relative;
+        animation: ro 3s linear infinite alternate;
+      }
+      @keyframes ro{
+        0%{
+          transform: rotate(-8deg);
+        }
+        100%{
+          transform: rotate(8deg);
+          
+        }
+      
+      }
+      div::before{
+        content: "floating";
+        color: black;
+        position: absolute;
+         clip-path: polygon(0% 0%,100% 0%,100% 50%,0% 50%);
+        animation: rop 3s linear infinite alternate;
+      }
+      @keyframes rop{
+        0%{
+         clip-path: polygon(0% 2%, 99% 97%, 99% 0%);
+
+        }
+        100%{
+          clip-path: polygon(0% 98%, 99% 1%, 0% 0%);
+        }
+       
+      }
+    </style>
+  </head>
+  <body>
+    <div class="">
+      floating
+    </div>
+  </body>
+</html>
